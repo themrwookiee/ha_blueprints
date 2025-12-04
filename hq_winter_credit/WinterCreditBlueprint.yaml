@@ -8,7 +8,7 @@ blueprint:
     preheat_active:
       name: Préchauffage en cours
       description: Binary_sensor indiquant que la période de préchauffage est en cours
-      default: binary_sensor.hydropeak_cpc_d_preheat_progress
+      #default: binary_sensor.hydropeak_cpc_d_preheat_progress
       selector:
         entity:
           integration: Hydro-Peak
@@ -18,7 +18,7 @@ blueprint:
     peak_active:
       name: Pointe en cours
       description: Binary_sensor indiquant que la période de pointe est en cours
-      default: binary_sensor.hydropeak_cpc_d_peak_progress
+      #default: binary_sensor.hydropeak_cpc_d_peak_progress
       selector:
         entity:
           integration: Hydro-Peak
