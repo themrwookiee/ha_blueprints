@@ -57,7 +57,7 @@ blueprint:
       default: binary_sensor.hydropeak_cpc_d_peak_today_am
       selector:
         entity:
-          integration: Hydro-Peak
+          #integration: Hydro-Peak
           domain: binary_sensor
           multiple: false
 
@@ -67,7 +67,7 @@ blueprint:
       default: binary_sensor.hydropeak_cpc_d_peak_today_pm
       selector:
         entity:
-          integration: Hydro-Peak
+          #integration: Hydro-Peak
           domain: binary_sensor
           multiple: false
 
