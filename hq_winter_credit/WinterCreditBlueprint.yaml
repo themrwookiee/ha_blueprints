@@ -3,25 +3,23 @@ blueprint:
   description: '# Gestion des événements de crédit hivernal d''Hydro-Québec.'
   domain: automation
   input:
-    # --- NOUVEAUX CAPTEURS ---
-
     preheat_active:
       name: Préchauffage en cours
       description: Binary_sensor indiquant que la période de préchauffage est en cours
-      #default: binary_sensor.hydropeak_cpc_d_preheat_progress
+      default: binary_sensor.hydro_quebec_home_pre_heat_in_progress
       selector:
         entity:
-          integration: Hydro-Peak
+          integration: Hydro-Québec
           domain: binary_sensor
           multiple: false
-
+          
     peak_active:
       name: Pointe en cours
       description: Binary_sensor indiquant que la période de pointe est en cours
-      #default: binary_sensor.hydropeak_cpc_d_peak_progress
+      default: binary_sensor.hydro_quebec_home_critical_peak_in_progress
       selector:
         entity:
-          integration: Hydro-Peak
+          integration: Hydro-Québec
           domain: binary_sensor
           multiple: false
 
@@ -30,10 +28,10 @@ blueprint:
     anchor_start:
       name: Début ancrage
       description: Début de la période d'ancrage (sensor.hydropeak_cpc_d_anchor_start)
-      default: sensor.hydropeak_cpc_d_anchor_start
+      default: sensor.hydro_quebec_home_next_anchor_start
       selector:
         entity:
-          integration: Hydro-Peak
+          integration: Hydro-Québec
           device_class: timestamp
           domain: sensor
           multiple: false
@@ -41,10 +39,10 @@ blueprint:
     anchor_end:
       name: Fin ancrage
       description: Fin de la période d'ancrage (sensor.hydropeak_cpc_d_anchor_end)
-      default: sensor.hydropeak_cpc_d_anchor_end
+      default: sensor.hydro_quebec_home_next_anchor_end
       selector:
         entity:
-          integration: Hydro-Peak
+          integration: Hydro-Québec
           device_class: timestamp
           domain: sensor
           multiple: false
@@ -54,20 +52,20 @@ blueprint:
     critical_am:
       name: Indicateur Critique (AM)
       description: Indicateur de pointe critique pour la matinée
-      default: binary_sensor.hydropeak_cpc_d_peak_today_am
+      default: binary_sensor.hydro_quebec_home_critical_morning_peak_today
       selector:
         entity:
-          #integration: Hydro-Peak
+          integration: Hydro-Québec
           domain: binary_sensor
           multiple: false
 
     critical_pm:
       name: Indicateur Critique (PM)
       description: Indicateur de pointe critique pour l'après-midi
-      default: binary_sensor.hydropeak_cpc_d_peak_today_pm
+      default: binary_sensor.hydro_quebec_home_critical_evening_peak_today
       selector:
         entity:
-          #integration: Hydro-Peak
+          integration: Hydro-Québec
           domain: binary_sensor
           multiple: false
 
